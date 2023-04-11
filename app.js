@@ -2,17 +2,27 @@ const express = require('express');
 //const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
+
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT;
 const path = require('path');
+const priceRouter = require("./src/router/courseRouter")
 
 app.use(morgan('combined'));
-app.use(express.static(path.join(__dirname,"/public/")));
-app.get("/",(req,res) =>{
+app.use(express.static(path.join(__dirname, "/public/")));
 
-    res.send('Hello Brooo');
+app.set("views", "./src/views");
+app.set("view engine", "ejs");
+
+
+app.use("/price", priceRouter); 
+
+app.get("/", (req, res) => {
+
+    //res.send('Hello Broooo');
+    res.render('index', { username: 'John Wick', customers: ["Ant", "Bat", "Cat"] });
 })
 
-app.listen(port, ()=>{
-    debug("Listening on port"+port);
+app.listen(PORT, () => {
+    debug("Listening on port" + PORT);
 })
