@@ -20,7 +20,7 @@ app.use("/price", priceRouter);
 app.get("/", (req, res) => {
 
     //res.send('Hello Broooo');
-    res.render('index', { username: 'John Wick', customers: ["Ant", "Bat", "Cat"] });
+    res.render('index');
 })
 
 app.listen(PORT, () => {
