@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "Title": "Pack A",
+        "course1": "HTML",
+        "course2": "CSS"
+    },
+    {
+        "id": 1,
+        "Title": "Pack B",
+        "course1": "JavaScript",
+        "course2": "TypeScript"
+    },
+    {
+        "id": 2,
+        "Title": "Pack C",
+        "course1": "Node.js",
+        "course2": "GitHub"
+    }
+]
